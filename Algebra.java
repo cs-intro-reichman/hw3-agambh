@@ -21,7 +21,8 @@ public class Algebra {
    		//System.out.println(sqrt(36));
 		//System.out.println(sqrt(263169));
    		//System.out.println(sqrt(76123));
-		System.out.println(7 % -4);
+		System.out.println(7 % 0);
+		System.out.println(0 % 8);
 	}  
 
 	// Returns x1 + x2
@@ -65,6 +66,9 @@ public class Algebra {
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
 		int times = x1 ;
+		if( x1 == 0 || x2 == 0 ){
+			return 0;
+		}
 		if(x2 < 0){
 			for( int i = 1 ; i < -x2 ; i++ ){
 				times = plus( times , x1 );
@@ -130,6 +134,9 @@ public class Algebra {
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
+		if( x1 == 0 || x2 == 0 ){
+			return 0;
+		}
 		if (x1 <0){
 			x1=minus(0, x1);
 		}
