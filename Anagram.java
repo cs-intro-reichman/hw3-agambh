@@ -9,7 +9,8 @@ public class Anagram {
 
 		// Tests the preProcess function.
 		System.out.println(preProcess("What? No way!!!"));
-        
+        System.out.println(preProcess("what   to  do"));
+
 		// Tests the randomAnagram function.
 		System.out.println("silent and " + randomAnagram("silent") + " are anagrams.");
 
@@ -57,6 +58,7 @@ public class Anagram {
 		boolean found= false;
 		String newS = "" ;
 		int mone = 0;
+		String empty = " " ;
 		String abc= "abcdefghijklmnopqrstuvwxyz";
 		char [] arr = new char[str.length()];
 		for( int i = 0 ; i < str.length() ; i++ ){
@@ -66,7 +68,11 @@ public class Anagram {
 					mone++ ;
 					found = true;
 				}
-			    else if(str.charAt(i)==abc.charAt(j)){
+			    else if(str.charAt(i)==abc.charAt(j) ){
+					arr[mone]=str.charAt(i);
+					mone++;
+					found=true;
+				} else if( str.charAt(i) == empty.charAt(0) ){
 					arr[mone]=str.charAt(i);
 					mone++;
 					found=true;
